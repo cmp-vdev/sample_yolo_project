@@ -1,0 +1,70 @@
+# ============================================
+# PYTHON COMPILED FILES
+# ============================================
+# Python automatically creates these when you run your code to speed things up.
+# They're recreated every time, so no need to track them in Git.
+# Think of these as "temporary helper files" Python makes for itself.
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ============================================
+# VIRTUAL ENVIRONMENT
+# ============================================
+# Your virtual environment folder contains all installed packages (PyTorch, ultralytics, etc).
+# This can be 500MB+ with thousands of files.
+# DON'T commit this - other developers will create their own venv using requirements.txt
+# It's like not sharing your entire grocery bag, just sharing the shopping list.
+.venv/
+venv/
+ENV/
+env/
+
+# ============================================
+# PYCHARM IDE SETTINGS
+# ============================================
+# Your personal PyCharm preferences (theme, window layout, code style, etc).
+# Other developers might use VS Code or have different PyCharm settings.
+# This is like your personal desk setup - not part of the actual project.
+.idea/
+
+# ============================================
+# YOLO TRAINING OUTPUTS
+# ============================================
+# YOLO generates these folders/files during training and inference
+
+# Training results (logs, graphs, metrics, example predictions)
+# Gets recreated every time you train, and can be several GB
+runs/
+
+# Trained model weights - these files can be 40MB-200MB each
+# Too large for Git. Share via Google Drive or Git LFS instead.
+weights/*.pt
+
+# Exception: DO keep the pretrained starting model (it's small and needed)
+# The ! means "ignore the rule above for this specific file"
+!weights/yolov11s.pt
+
+# Your training images and annotations - often gigabytes of data
+# Store separately or use Git LFS for large datasets
+datasets/
+
+# YOLO creates these cache files to load data faster during training
+# Auto-regenerated, no need to track them
+*.cache
+
+# ============================================
+# MACOS SYSTEM FILES
+# ============================================
+# macOS creates these hidden files in every folder to remember Finder settings
+# Completely useless to anyone not on Mac, just clutters commits
+.DS_Store
+
+# ============================================
+# WINDOWS SYSTEM FILES (if working cross-platform)
+# ============================================
+# Windows equivalents to .DS_Store - thumbnail cache and system files
+Thumbs.db
+desktop.ini
