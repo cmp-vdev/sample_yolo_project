@@ -39,17 +39,26 @@ env/
 # Gets recreated every time you train, and can be several GB
 runs/
 
-# Trained model weights - these files can be 40MB-200MB each
+# Model weights - these files can be 40MB-200MB each
 # Too large for Git. Share via Google Drive or Git LFS instead.
-weights/*.pt
+# Ignores all .pt files in the models/ directory
+models/*.pt
 
-# Exception: DO keep the pretrained starting model (it's small and needed)
-# The ! means "ignore the rule above for this specific file"
-!weights/yolov11s.pt
+# Exception: If you want to keep a specific pretrained model, uncomment this:
+# !models/yolo11s.pt
 
 # Your training images and annotations - often gigabytes of data
 # Store separately or use Git LFS for large datasets
 datasets/
+
+# Downloaded test images and data files
+# These are auto-downloaded by scripts, no need to commit
+data/*.jpg
+data/*.jpeg
+data/*.png
+data/*.gif
+data/*.mp4
+data/*.avi
 
 # YOLO creates these cache files to load data faster during training
 # Auto-regenerated, no need to track them
@@ -59,7 +68,7 @@ datasets/
 # MACOS SYSTEM FILES
 # ============================================
 # macOS creates these hidden files in every folder to remember Finder settings
-# Completely useless to anyone not on Mac, just clutters commits
+# Completely useless to anyone not on Mac, just clutters your commits
 .DS_Store
 
 # ============================================
